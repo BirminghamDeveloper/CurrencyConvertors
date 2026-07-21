@@ -45,3 +45,5 @@ kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "ko
 currencyconvertor-android-library = { id = "currencyConvertor.android.library", version = "unspecified" }
 
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+
+#currencyconvertor-jvm-library = { id = "currencyConvertor.jvm.library", version = "unspecified" }
