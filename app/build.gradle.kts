@@ -1,6 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
+
+    // Generates Hilt and Room classes
+    alias(libs.plugins.ksp)
+
+    // Enables Hilt Android integration
+//    alias(libs.plugins.hilt)
+    alias(libs.plugins.currencyconvertor.android.hilt)
+    // Enables Room schema configuration
+//    alias(libs.plugins.room)
 }
 
 android {
@@ -36,6 +45,12 @@ android {
         compose = true
     }
 }
+/*
+// Required because the Room plugin is applied
+room {
+    schemaDirectory("$projectDir/schemas")
+}
+*/
 
 dependencies {
     implementation(libs.androidx.core.ktx)
@@ -53,4 +68,43 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
+
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+
+    // Lifecycle support for Compose
+    implementation(libs.androidx.lifecycle.runtime.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+
+    // Hilt
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    // hiltViewModel() for Compose
+    implementation(
+        libs.androidx.hilt.lifecycle.viewmodel.compose
+    )
+
+    // Room
+    implementation(libs.room.runtime)
+    implementation(libs.room.ktx)
+    ksp(libs.room.compiler)
+
+    // WorkManager
+    implementation(libs.androidx.work.runtime.ktx)
+
+    // Hilt Worker support
+    implementation(libs.androidx.hilt.work)
+    ksp(libs.androidx.hilt.compiler)
+
+    // Java API desugaring
+    coreLibraryDesugaring(libs.android.desugarJdkLibs)
+
+    implementation(project(":core:network"))
+
+    testImplementation(libs.room.testing)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.androidx.core.testing)
+
 }

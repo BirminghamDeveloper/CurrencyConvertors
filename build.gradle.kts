@@ -3,4 +3,13 @@ plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.compose) apply false
     alias(libs.plugins.kotlin.serialization) apply false
+
+    // Required for Hilt and Room code generation
+    alias(libs.plugins.ksp) apply false
+
+    // Hilt Gradle plugin
+    alias(libs.plugins.hilt) apply false
+
+    // Room Gradle plugin
+    alias(libs.plugins.room) apply false
 }

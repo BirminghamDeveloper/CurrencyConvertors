@@ -29,6 +29,8 @@ dependencies {
     // Both now match the main project versions
     compileOnly(libs.android.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
+    compileOnly(libs.android.tools.common)
+    compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
@@ -41,6 +43,9 @@ gradlePlugin {
             id = "currencyConvertor.jvm.library"
             implementationClass = "JvmLibraryConventionPlugin"
         }
-
+        register("androidHilt") {
+            id = "currencyConvertor.android.hilt"
+            implementationClass = "AndroidHiltConventionPlugin"
+        }
     }
 }

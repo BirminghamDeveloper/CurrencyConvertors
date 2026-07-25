@@ -5,7 +5,7 @@ import com.mc.model.currency_convertor.Meta
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class ExchangeResponse(
+data class ExchangeRatesResponse(
     val meta: Meta,
     val data: Map<String, CurrencyInfo>
 )
