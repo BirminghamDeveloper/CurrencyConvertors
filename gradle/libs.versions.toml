@@ -59,6 +59,8 @@ retrofit-logger = { group = "com.squareup.okhttp3", name = "logging-interceptor"
 
 kotlin-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.6.3" }
 
+compose-compiler-gradlePlugin = { module = "org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "kotlin" }
+
 # Java API desugaring
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
 
@@ -123,9 +125,12 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 
 #currencyconvertor-jvm-library = { id = "currencyConvertor.jvm.library", version = "unspecified" }
 
+currencyconvertor-android-compose = { id = "currencyConvertor.android.compose", version = "unspecified" }
+
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+
 currencyconvertor-android-hilt = { id = "currencyConvertor.android.hilt", version = "unspecified" }
 
 room = { id = "androidx.room", version.ref = "room" }

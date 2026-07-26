@@ -10,6 +10,8 @@ class CurrencyRepositoryImpl @Inject constructor(
     private val currencyService: CurrencyService
 ): CurrencyRepository {
     override suspend fun getExchangeRates(): ExchangeRates {
-        return currencyService.getExchangeRates().toExternalModel(baseCurrency = "USD")
+        return currencyService
+            .getExchangeRates()
+            .toExternalModel(baseCurrency = "USD")
     }
 }

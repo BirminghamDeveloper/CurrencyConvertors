@@ -1,8 +1,9 @@
-package model.response.currency_convertor
+ package model.response.currency_convertor
 
 import com.mc.model.currency_convertor.CurrencyInfo
 import com.mc.model.currency_convertor.ExchangeRates
 import com.mc.model.currency_convertor.Meta
+import kotlinx.serialization.InternalSerializationApi
 import kotlinx.serialization.Serializable
 
 @Serializable
@@ -14,9 +15,6 @@ data class ExchangeRatesResponse(
 fun ExchangeRatesResponse.toExternalModel(baseCurrency: String): ExchangeRates {
     return ExchangeRates(
         baseCurrency = baseCurrency,
-        /*// this.. is not necessary
-        rates = this.data.mapValues { it.value.value },
-        lastUpdatedDate = this.meta.lastUpdatedAt*/
         rates = data.mapValues { it.value.value },
         lastUpdatedDate = meta.lastUpdatedAt
     )

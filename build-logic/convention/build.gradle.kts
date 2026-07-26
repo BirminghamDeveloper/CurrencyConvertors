@@ -31,6 +31,7 @@ dependencies {
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.android.tools.common)
     compileOnly(libs.ksp.gradlePlugin)
+    compileOnly(libs.compose.compiler.gradlePlugin)
 }
 
 gradlePlugin {
@@ -46,6 +47,10 @@ gradlePlugin {
         register("androidHilt") {
             id = "currencyConvertor.android.hilt"
             implementationClass = "AndroidHiltConventionPlugin"
+        }
+        register("androidLibraryCompose"){
+            id = "currencyConvertor.android.compose"
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
     }
 }
