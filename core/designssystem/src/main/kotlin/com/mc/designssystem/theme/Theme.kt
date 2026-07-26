@@ -1,6 +1,5 @@
-package com.hashinology.currencyconvertors.ui.theme
+package com.mc.designssystem.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

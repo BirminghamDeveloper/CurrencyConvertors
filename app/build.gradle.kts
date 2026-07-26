@@ -100,11 +100,11 @@ dependencies {
     // Java API desugaring
     coreLibraryDesugaring(libs.android.desugarJdkLibs)
 
-    implementation(project(":core:network"))
-
     testImplementation(libs.room.testing)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.androidx.core.testing)
 
+    implementation(project(":core:network"))
+    implementation(project(":core:designssystem"))
 }

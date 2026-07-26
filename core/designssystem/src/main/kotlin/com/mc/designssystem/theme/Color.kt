@@ -1,4 +1,4 @@
-package com.hashinology.currencyconvertors.ui.theme
+package com.mc.designssystem.theme
 
 import androidx.compose.ui.graphics.Color
 
