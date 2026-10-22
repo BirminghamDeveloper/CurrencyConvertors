@@ -17,6 +17,13 @@ import androidx.compose.ui.unit.dp
 import com.mc.designssystem.components.MCTextMenu
 import com.mc.designssystem.theme.CurrencyConvertorsTheme
 import dagger.hilt.android.AndroidEntryPoint
+import androidx.compose.foundation.layout.systemBarsPadding
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -25,9 +32,15 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            CurrencyConvertorsTheme(
-                dynamicColor = false
-            ) {
+            CurrencyConvertorsTheme(dynamicColor = false) {
+                val currencies = remember {
+                    listOf("USD", "EUR", "GBP", "JPY", "AUD")
+                }
+
+                var selectedCurrency by rememberSaveable {
+                    mutableStateOf("USD")
+                }
+
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background,
@@ -35,20 +48,16 @@ class MainActivity : ComponentActivity() {
                 ) {
                     Box(
                         modifier = Modifier
-                            .statusBarsPadding()
-                            .padding(24.dp)
+                            .fillMaxSize()
+                            .systemBarsPadding()
+                            .padding(24.dp),
+                        contentAlignment = Alignment.Center
                     ) {
                         MCTextMenu(
-                            selectedOption = "USD",
-                            options = listOf(
-                                "USD",
-                                "EUR",
-                                "GBP",
-                                "JPY",
-                                "AUD"
-                            ),
+                            selectedOption = selectedCurrency,
+                            options = currencies,
                             onOptionSelected = { index ->
-                                println("Selected index: $index")
+                                selectedCurrency = currencies[index]
                             }
                         )
                     }
