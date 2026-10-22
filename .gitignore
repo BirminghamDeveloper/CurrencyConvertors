@@ -1,15 +1,54 @@
+# IntelliJ IDEA
 *.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
+/.idea/caches/
+/.idea/libraries/
 /.idea/modules.xml
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+/.idea/tasks.xml
+/.idea/deviceManager.xml
+/.idea/shelf/
+
+# Gradle
+.gradle/
+**/build/
+/build/
+
+# Android compiled and generated files
+*.class
+*.dex
+*.apk
+*.aab
+*.ap_
+*.hprof
+*.log
+
+# Local configuration
+/local.properties
 local.properties
+
+# macOS
+.DS_Store
+
+# Android Studio
+/captures/
+/.externalNativeBuild/
+.externalNativeBuild/
+.cxx/
+**/.cxx/
+
+# Generated Kotlin and Java outputs
+**/generated/
+**/intermediates/
+**/outputs/
+**/tmp/
+
+# Native build files
+*.o
+*.so
+
+# Temporary files
+*.tmp
+*.bak
+*~

@@ -3,6 +3,12 @@ plugins {
     alias(libs.plugins.currencyconvertor.android.hilt)
 //    id("kotlinx-serialization")
     alias(libs.plugins.kotlin.serialization)
+
+    // Old Style
+    /*
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
+     */
 }
 
 android {

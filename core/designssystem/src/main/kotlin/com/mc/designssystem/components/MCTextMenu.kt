@@ -71,18 +71,23 @@ fun MCTextMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false }
         ) {
-            options.forEachIndexed { index, option ->
-                DropdownMenuItem(
-                    text = {
-                        Text(text = option)
-                    },
-                    onClick = {
-                        onOptionSelected(index)
-                        expanded = false
-                    },
-                    contentPadding =
-                        ExposedDropdownMenuDefaults.ItemContentPadding
-                )
+            LazyColumn(
+                Modifier
+                    .width(150.dp)
+                    .height(300.dp),
+            ) {
+                itemsIndexed(options) { index, option ->
+                    DropdownMenuItem(
+                        text = {
+                               Text(text = option)
+                        },
+                        onClick = {
+                            onOptionSelected(index)
+                            expanded = false
+                        },
+                        contentPadding = ExposedDropdownMenuDefaults.ItemContentPadding
+                    )
+                }
             }
         }
     }
